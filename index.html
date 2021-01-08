@@ -3,49 +3,15 @@
   <head>
     <meta charset="utf-8" />
     <title>My first three.js app</title>
-    <style>
-      body {
-        margin: 0;
-        padding: 0;
-      }
-      canvas {
-        display: block;
-      }
-    </style>
+    <link href="./style.css" type="text/css" rel="stylesheet" />
   </head>
   <body>
     <canvas id="c"> </canvas>
 
-    <script type="module">
-      import * as THREE from "https://unpkg.com/three@0.120.1/build/three.module.js";
+    <h2>ThreeJS Notes</h2>
+    <p>A renderer is a scene and camera.</p>
+    <p>A scenegraph is a tree containing everything in the scene.</p>
 
-      function main() {
-        const canvas = document.querySelector("#c");
-        const renderer = new THREE.WebGLRenderer({ canvas });
-
-        const fov = 75;
-        const aspect = 2;
-        const near = 0.1;
-        const far = 5;
-        const camera = new THREE.PerspectiveCamera(fov, aspect, near, far);
-        camera.position.z = 2;
-
-        const scene = new THREE.Scene();
-
-        const boxWidth = 1;
-        const boxHeight = 1;
-        const boxDepth = 1;
-        const geometry = new THREE.BoxGeometry(boxWidth, boxHeight, boxDepth);
-
-        const material = new THREE.MeshBasicMaterial({ color: 0x44aa88 });
-
-        const cube = new THREE.Mesh(geometry, material);
-        scene.add(cube);
-
-        renderer.render(scene, camera);
-      }
-
-      main();
-    </script>
+    <script src="./test.js" type="module"></script>
   </body>
 </html>
